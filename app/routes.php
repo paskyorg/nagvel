@@ -17,3 +17,5 @@ Route::get('/', function()
 });
 
 Route::resource('commands', 'CommandsController');
+
+Route::resource('timeperiods', 'TimeperiodsController');
