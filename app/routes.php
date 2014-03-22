@@ -21,3 +21,5 @@ Route::resource('commands', 'CommandsController');
 Route::resource('timeperiods', 'TimeperiodsController');
 
 Route::resource('contacts', 'ContactsController');
+
+Route::resource('hosts', 'HostsController');
