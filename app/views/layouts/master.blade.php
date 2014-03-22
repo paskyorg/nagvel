@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{ isset($data['title']) ? $data['title'] : 'Nagvel' }}</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <title>{{ isset($data['title']) ? $data['title'] : 'Nagvel' }}</title>
+    <link rel="stylesheet" href="/nagvel/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
@@ -21,11 +21,10 @@
             {{ HTML::nav_link('commands', 'Commands') }}
 	</ul>
     </nav>
-    @yield('content')
+@yield('content')
 </div>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js" type="text/javascript"></script>
-    @yield('js')
-    
+<script src="/nagvel/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/nagvel/js/bootstrap.js" type="text/javascript"></script>
+@yield('js')
 </body>
 </html>
