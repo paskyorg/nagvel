@@ -8,8 +8,8 @@ class CommandsController extends \BaseController {
 	 * @return Response
 	 */
 	public function index() {
-            return View::make('commands.index')
-                ->with('commands', Command::all());
+            $data['commands'] = Command::all();
+            return View::make('commands.index', $data);
 	}
 
 	/**
@@ -19,8 +19,7 @@ class CommandsController extends \BaseController {
 	 */
 	public function create() {
             $data['title'] = 'Create a Command';
-            return View::make('commands.form')
-                    ->with('data', $data);
+            return View::make('commands.form', $data);
 	}
 
 	/**
@@ -48,8 +47,8 @@ class CommandsController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id) {
-            return View::make('commands.show')
-                    ->with('command', Command::find($id));
+            $data['command'] = Command::find($id);
+            return View::make('commands.show', $data);
 	}
 
 	/**
@@ -60,9 +59,8 @@ class CommandsController extends \BaseController {
 	 */
 	public function edit($id) {
             $data['title'] = 'Edit a Command';
-            return View::make('commands.form')
-                    ->with('command', Command::find($id))
-                    ->with('data', $data);
+            $data['command'] = Command::find($id);
+            return View::make('commands.form', $data);
 	}
 
 	/**

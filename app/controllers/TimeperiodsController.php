@@ -8,8 +8,8 @@ class TimeperiodsController extends \BaseController {
 	 * @return Response
 	 */
 	public function index() {
-            return View::make('timeperiods.index')
-                ->with('timeperiods', Timeperiod::all());
+            $data['timeperiods'] = Timeperiod::all();
+            return View::make('timeperiods.index', $data);
 	}
 
 	/**
@@ -19,8 +19,7 @@ class TimeperiodsController extends \BaseController {
 	 */
 	public function create() {
             $data['title'] = 'Create a Timeperiod';
-            return View::make('timeperiods.form')
-                    ->with('data', $data);
+            return View::make('timeperiods.form', $data);
 	}
 
 	/**
@@ -48,8 +47,8 @@ class TimeperiodsController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id) {
-            return View::make('timeperiods.show')
-                    ->with('timeperiod', Timeperiod::find($id));
+            $data['timeperiod'] = Timeperiod::find($id);
+            return View::make('timeperiods.show', $data);
 	}
 
 	/**
@@ -60,9 +59,8 @@ class TimeperiodsController extends \BaseController {
 	 */
 	public function edit($id) {
             $data['title'] = 'Edit a Timeperiod';
-            return View::make('timeperiods.form')
-                    ->with('timeperiod', Timeperiod::find($id))
-                    ->with('data', $data);
+            $data['timeperiod'] = Timeperiod::find($id);
+            return View::make('timeperiods.form', $data);
 	}
 
 	/**
