@@ -7,5 +7,10 @@ class Timeperiod extends \Eloquent {
     public function contacts() {
         return $this->hasMany('Contact');
     }
+    
+    // Relationship with Host Model
+    public function hosts() {
+        return $this->hasMany('Host');
+    }
 
 }
