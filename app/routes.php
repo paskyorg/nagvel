@@ -23,3 +23,5 @@ Route::resource('timeperiods', 'TimeperiodsController');
 Route::resource('contacts', 'ContactsController');
 
 Route::resource('hosts', 'HostsController');
+
+Route::resource('services', 'ServicesController');
